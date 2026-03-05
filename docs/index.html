@@ -1,0 +1,666 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Minimalist Website</title>
+    <style>
+        /* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+        Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+    background-color: #fff;
+    color: #0f0f0f;
+    line-height: 1.6;
+}
+
+/* Container */
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Header */
+header {
+    border-bottom: 1px solid #ddd;
+}
+
+.header-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px 0;
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: 900;
+    background-color: #000;
+    color: #fff;
+    width: 40px;
+    height: 40px;
+    display: grid;
+    place-items: center;
+    border-radius: 4px;
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+    gap: 2rem;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #0f0f0f;
+    font-weight: 500;
+    font-size: 0.9rem;
+}
+
+nav ul li a:hover {
+    text-decoration: underline;
+}
+
+.auth-buttons a {
+    padding: 8px 14px;
+    border-radius: 20px;
+    font-weight: 600;
+    text-decoration: none;
+    font-size: 0.9rem;
+    margin-left: 15px;
+    border: none;
+    cursor: pointer;
+}
+
+.auth-buttons .login {
+    color: #0f0f0f;
+    border: 1px solid #ccc;
+    background-color: transparent;
+    transition: background-color 0.3s ease;
+}
+
+.auth-buttons .login:hover {
+    background-color: #000;
+    color: #fff;
+}
+
+.auth-buttons .signup {
+    background-color: #000;
+    color: #fff;
+    border: none;
+    box-shadow: 0 4px 8px rgb(0 0 0 / 0.2);
+    transition: box-shadow 0.3s ease;
+}
+
+.auth-buttons .signup:hover {
+    box-shadow: 0 6px 12px rgb(0 0 0 / 0.3);
+}
+
+/* Hero Section */
+.hero {
+    margin-top: 60px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 50px;
+}
+
+.hero-text {
+    flex: 1;
+}
+
+.hero-text h1 {
+    font-size: 2.5rem;
+    font-weight: 800;
+    margin-bottom: 15px;
+}
+
+.hero-text p {
+    font-weight: 400;
+    color: #444;
+    margin-bottom: 25px;
+    max-width: 450px;
+    font-size: 1.1rem;
+}
+
+.hero-buttons {
+    display: flex;
+    gap: 12px;
+}
+
+.btn {
+    border-radius: 25px;
+    font-weight: 600;
+    font-size: 0.95rem;
+    padding: 10px 25px;
+    cursor: pointer;
+    border: 1px solid transparent;
+    transition: all 0.3s ease;
+}
+
+.primary-btn {
+    background-color: #000;
+    color: #fff;
+    border: none;
+    box-shadow: 0 4px 10px rgb(0 0 0 / 0.15);
+}
+
+.primary-btn:hover {
+    background-color: #222;
+}
+
+.outline-btn {
+    background-color: transparent;
+    color: #000;
+    border: 1px solid #000;
+}
+
+.outline-btn:hover {
+    background-color: #000;
+    color: #fff;
+}
+
+.hero-image img {
+    width: 320px;
+    height: auto;
+    border-radius: 4px;
+}
+
+/* Made For You Section */
+.made-for-you {
+    text-align: center;
+    margin: 100px 0 80px 0;
+}
+
+.made-for-you .subtitle {
+    text-transform: uppercase;
+    font-size: 0.85rem;
+    color: #444;
+    letter-spacing: 2.5px;
+    margin-bottom: 8px;
+}
+
+.made-for-you h2 {
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+
+.made-for-you .description {
+    color: #666;
+    font-size: 1rem;
+    margin-bottom: 50px;
+}
+
+.cards-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 40px;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.card {
+    text-align: center;
+    padding: 15px;
+    font-weight: 500;
+    color: #444;
+}
+
+.card h3 {
+    margin: 10px 0 8px;
+    font-weight: 700;
+}
+
+.card .icon {
+    font-size: 2.2rem;
+}
+
+/* Creation Section */
+.creation {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 50px;
+    margin-bottom: 80px;
+}
+
+.creation-text {
+    flex: 1;
+}
+
+.creation-text h2 {
+    font-weight: 700;
+    font-size: 2rem;
+    margin-bottom: 15px;
+}
+
+.creation-text p {
+    color: #444;
+    font-weight: 400;
+    max-width: 500px;
+    font-size: 1rem;
+    margin-bottom: 30px;
+}
+
+.creation-bottom span {
+    font-weight: 600;
+    margin-right: 25px;
+    color: #000;
+    font-size: 1rem;
+}
+
+.creation-image img {
+    width: 400px;
+    height: auto;
+    border-radius: 4px;
+}
+
+/* How We Handle Section */
+.how-we-handle {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 50px;
+    margin-bottom: 80px;
+    flex-wrap: wrap;
+}
+
+.how-image img {
+    width: 380px;
+    height: auto;
+    border-radius: 4px;
+}
+
+.how-text {
+    flex: 1;
+    max-width: 600px;
+}
+
+.how-text .subtitle {
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: #777;
+    text-transform: uppercase;
+    margin-bottom: 8px;
+}
+
+.how-text h2 {
+    font-weight: 700;
+    font-size: 2rem;
+    margin-bottom: 15px;
+}
+
+.how-text p {
+    color: #444;
+    font-size: 1rem;
+    margin-bottom: 20px;
+    line-height: 1.4;
+}
+
+.see-how-link {
+    font-weight: 600;
+    text-decoration: none;
+    font-size: 1rem;
+    color: #000;
+    border-bottom: 1px solid transparent;
+    transition: border-color 0.3s ease;
+}
+
+.see-how-link:hover {
+    border-bottom: 1px solid #000;
+}
+
+/* Footer */
+footer {
+    background-color: #f5f5f5;
+    padding: 40px 0 30px;
+    border-top: 1px solid #ddd;
+}
+
+.footer-top {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 40px;
+    margin-bottom: 30px;
+}
+
+.footer-logo-social {
+    max-width: 350px;
+}
+
+.footer-logo-social .logo {
+    background-color: #000;
+    color: #fff;
+    display: inline-grid;
+    place-items: center;
+    font-weight: 900;
+    font-size: 1.5rem;
+    width: 40px;
+    height: 40px;
+    border-radius: 4px;
+    margin-bottom: 20px;
+}
+
+.footer-desc {
+    font-size: 0.9rem;
+    color: #444;
+    margin-bottom: 25px;
+    line-height: 1.4;
+    max-width: 300px;
+}
+
+.social-icons a {
+    margin-right: 15px;
+    text-decoration: none;
+    font-weight: 700;
+    color: #444;
+    font-size: 1.2rem;
+}
+
+.footer-links {
+    display: flex;
+    gap: 60px;
+    flex-wrap: wrap;
+}
+
+.footer-links h4 {
+    margin-bottom: 15px;
+    font-weight: 700;
+    font-size: 1rem;
+}
+
+.footer-links ul {
+    list-style: none;
+}
+
+.footer-links ul li {
+    margin-bottom: 10px;
+    font-size: 0.9rem;
+    color: #444;
+}
+
+.footer-links ul li a {
+    color: #444;
+    text-decoration: none;
+}
+
+.footer-links ul li a:hover {
+    text-decoration: underline;
+}
+
+/* Footer bottom */
+.footer-bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.subscribe-form {
+    display: flex;
+    max-width: 350px;
+    width: 100%;
+}
+
+.subscribe-form input[type="email"] {
+    flex-grow: 1;
+    padding: 10px 15px;
+    border: 1px solid #ccc;
+    border-radius: 25px 0 0 25px;
+    font-size: 1rem;
+    outline: none;
+}
+
+.subscribe-form button {
+    background-color: #000;
+    color: #fff;
+    border: none;
+    padding: 0 20px;
+    border-radius: 0 25px 25px 0;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.subscribe-form button:hover {
+    background-color: #222;
+}
+
+© 2024 Minimal
+copyright {
+    font-size: 0.9rem;
+    color: #444;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+    .hero,
+    .creation,
+    .how-we-handle {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .hero-image,
+    .creation-image,
+    .how-image {
+        max-width: 100%;
+        margin-bottom: 25px;
+    }
+
+    .footer-top {
+        justify-content: center;
+    }
+
+    .footer-links {
+        justify-content: center;
+        gap: 40px;
+    }
+}
+@media (max-width: 500px) {
+    nav ul {
+        display: none;
+    }
+
+    .auth-buttons a {
+        margin-left: 10px;
+        padding: 6px 12px;
+        font-size: 0.85rem;
+    }
+}
+    </style)
+</head>
+<body>
+    <header>
+        <div class="container header-container">
+            <div class="logo">M</div>
+            <nav>
+                <ul>
+                    <li><a href="#">Pages</a></li>
+                    <li><a href="#">Elements</a></li>
+                    <li><a href="#">News</a></li>
+                    <li><a href="#">About us</a></li>
+                </ul>
+            </nav>
+            <div class="auth-buttons">
+                <a href="#" class="login">Login</a>
+                <a href="#" class="signup">Sign Up</a>
+            </div>
+        </div>
+    </header>
+
+    <section class="hero container">
+        <div class="hero-text">
+            <h1>The beauty of Minimalism.</h1>
+            <p>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam
+                leo dignissim, luctus nulla non, faucibus consequat dolor. Nulla
+                nulla sem fusce pharetra.
+            </p>
+            <div class="hero-buttons">
+                <button class="btn primary-btn">Discover</button>
+                <button class="btn outline-btn">View Tour</button>
+            </div>
+        </div>
+        <div class="hero-image">
+            <img src="https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&w=400&q=80" alt="Woman" />
+        </div>
+    </section>
+
+    <section class="made-for-you container">
+        <p class="subtitle">Who we serve</p>
+        <h2>Made for you</h2>
+        <p class="description">We serve users of all types, everywhere, on purpose</p>
+
+        <div class="cards-grid">
+            <div class="card">
+                <span class="icon">🧑‍🎨</span>
+                <h3>For Pros</h3>
+                <p> Creators and professionals who demand streamlined maximum ROI.</p>
+            </div>
+
+            <div class="card">
+                <span class="icon">🏢</span>
+                <h3>For Businesses</h3>
+                <p> Companies big and small, fueling business boosting ROI.</p>
+            </div>
+
+            <div class="card">
+                <span class="icon">🏆</span>
+                <h3>For Champions</h3>
+                <p> Creators and professionals who demand maximum ROI.</p>
+            </div>
+
+            <div class="card">
+                <span class="icon">🚀</span>
+                <h3>For Startups</h3>
+                <p> Creators and professionals who demand maximum ROI.</p>
+            </div>
+
+            <div class="card">
+                <span class="icon">🛍️</span>
+                <h3>For Merchants</h3>
+                <p> Creators and professionals who demand maximum ROI.</p>
+            </div>
+
+            <div class="card">
+                <span class="icon">📚</span>
+                <h3>For Marketers</h3>
+                <p> Creators and professionals who demand maximum ROI.</p>
+            </div>
+
+            <div class="card">
+                <span class="icon">👨‍💼</span>
+                <h3>For Employees</h3>
+                <p> Creators and professionals who demand maximum ROI.</p>
+            </div>
+
+            <div class="card">
+                <span class="icon">🎨</span>
+                <h3>For Artists</h3>
+                <p> Creators and professionals who demand maximum ROI.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="creation container">
+        <div class="creation-text">
+            <h2>Creation is brutalistic</h2>
+            <p>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec
+                semper, quam eu dictum pulvinar, mauris orci fermentum quam,
+                quis egestas metus odio et lorem. Curabitur dictum dolor nec
+                ligula faucibus porta.
+            </p>
+            <div class="creation-bottom">
+                <span>Creative thinking</span>
+                <span>Technique</span>
+            </div>
+        </div>
+        <div class="creation-image">
+            <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=400&q=80" alt="Mount Rushmore" />
+        </div>
+    </section>
+
+    <section class="how-we-handle container">
+        <div class="how-image">
+            <img src="https://images.unsplash.com/photo-1532074205216-cb71f93f71f3?auto=format&fit=crop&w=400&q=80" alt="Artistic mentoring" />
+        </div>
+        <div class="how-text">
+            <p class="subtitle">Coaching</p>
+            <h2>Artistic mentoring</h2>
+            <p>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam
+                non convallis elit. Etiam accumsan leo vel augue euismod
+                gravida. Suspendisse vehicula velit libero, sed laoreet est
+                bibendum sed.
+            </p>
+            <a href="#" class="see-how-link">See how it works →</a>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container footer-top">
+            <div class="footer-logo-social">
+                <div class="logo">M</div>
+                <div class="footer-desc">
+                    Minimal is a fresh and challenging UI kit in web, with bold,
+                    contemporary tone and a lot of white space.
+                </div>
+                <div class="social-icons">
+                    <a href="#">Fb</a>
+                    <a href="#">Tw</a>
+                    <a href="#">In</a>
+                    <a href="#">Dr</a>
+                </div>
+            </div>
+
+            <div class="footer-links">
+                <div>
+                    <h4>Company</h4>
+                    <ul>
+                        <li><a href="#">About us</a></li>
+                        <li><a href="#">Our people</a></li>
+                        <li><a href="#">Press room</a></li>
+                        <li><a href="#">Career</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4>News</h4>
+                    <ul>
+                        <li><a href="#">Press</a></li>
+                        <li><a href="#">Events & Opening</a></li>
+                        <li><a href="#">Announcements</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4>Find Us</h4>
+                    <ul>
+                        <li>Via antiquo mollis 296, Berlin</li>
+                        <li>info@minimal.net</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-bottom container">
+            <form class="subscribe-form">
+                <input type="email" placeholder="Subscribe" />
+                <button type="submit">Submit</button>
+            </form>
+            <div class="copyright">© 2024 Minimal</div>
+        </div>
+    </footer>
+</body>
+</html>
