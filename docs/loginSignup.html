@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Login / Signup - Under Construction</title>
+<style>
+  /* Reset */
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  body, html {
+    height: 100%;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+      Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+    background: #fff;
+    color: #0f0f0f;
+  }
+
+  /* Container */
+  .container {
+    max-width: 400px;
+    margin: 80px auto;
+    padding: 0 20px;
+  }
+
+  /* Logo */
+  .logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+    width: 40px;
+    height: 40px;
+    background: #000;
+    color: white;
+    display: grid;
+    place-items: center;
+    border-radius: 4px;
+    margin-bottom: 40px;
+  }
+
+  /* Tabs */
+  .tabs {
+    display: flex;
+    margin-bottom: 30px;
+    border-bottom: 2px solid #ddd;
+  }
+  .tab {
+    flex: 1;
+    text-align: center;
+    padding: 10px 0;
+    font-weight: 600;
+    cursor: pointer;
+    border-bottom: 3px solid transparent;
+    transition: border-color 0.3s ease;
+    user-select: none;
+  }
+  .tab.active {
+    border-color: #000;
+  }
+
+  /* Forms */
+  form {
+    display: none;
+    flex-direction: column;
+    gap: 20px;
+  }
+  form.active {
+    display: flex;
+  }
+
+  label {
+    font-weight: 600;
+    font-size: 0.9rem;
+  }
+  input[type="email"],
+  input[type="password"],
+  input[type="text"] {
+    padding: 12px 15px;
+    border: 1px solid #ccc;
+    border-radius: 25px;
+    font-size: 1rem;
+    outline: none;
+    transition: border-color 0.3s ease;
+  }
+  input[type="email"]:focus,
+  input[type="password"]:focus,
+  input[type="text"]:focus {
+    border-color: #000;
+  }
+
+  button {
+    background-color: #000;
+    color: white;
+    padding: 12px 0;
+    border: none;
+    font-weight: 700;
+    font-size: 1rem;
+    border-radius: 25px;
+    cursor: pointer;
+    box-shadow: 0 4px 8px rgb(0 0 0 / 0.2);
+    transition: background-color 0.3s ease;
+  }
+  button:hover {
+    background-color: #222;
+  }
+
+  /* Under Construction Overlay */
+  #under-construction {
+    position: fixed;
+    inset: 0;
+    background: rgba(255 255 255 / 0.95);
+    backdrop-filter: blur(6px);
+    z-index: 9999;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem;
+    text-align: center;
+  }
+  #under-construction h1 {
+    font-size: 1.2rem;
+    font-weight: 900;
+    margin-bottom: 0.6rem;
+  }
+  #under-construction p {
+    font-size: 0.7rem;
+    color: #444;
+    margin-bottom: 0.7rem;
+  }
+  #under-construction button {
+    max-width: 180px;
+  }
+
+  /* Responsive */
+  @media (max-width: 480px) {
+    .container {
+      margin: 40px auto;
+      max-width: 90%;
+    }
+  }
+</style>
+</head>
+<body>
+
+<div id="under-construction">
+  <h1>🚧 Under Construction 🚧</h1>
+  <p>This page is currently being built. Please check back soon.</p>
+  <button id="dismiss-btn" aria-label="Dismiss under construction message">Dismiss</button>
+</div>
+
+<div class="container" role="main" aria-labelledby="login-signup-header">
+  <div class="logo" aria-hidden="true">M</div>
+
+  <div class="tabs" role="tablist">
+    <div class="tab active" id="login-tab" role="tab" aria-controls="login-form" tabindex="0" aria-selected="true">Login</div>
+    <div class="tab" id="signup-tab" role="tab" aria-controls="signup-form" tabindex="-1" aria-selected="false">Sign Up</div>
+  </div>
+
+  <form id="login-form" class="active" role="tabpanel" aria-labelledby="login-tab" autocomplete="off" novalidate>
+    <label for="login-email">Email</label>
+    <input id="login-email" type="email" placeholder="you@example.com" required autocomplete="email" />
+    <label for="login-password">Password</label>
+    <input id="login-password" type="password" placeholder="Your password" required autocomplete="current-password" />
+    <button type="submit">Log In</button>
+  </form>
+
+  <form id="signup-form" role="tabpanel" aria-labelledby="signup-tab" autocomplete="off" novalidate>
+    <label for="signup-name">Full Name</label>
+    <input id="signup-name" type="text" placeholder="John Doe" required autocomplete="name" />
+    <label for="signup-email">Email</label>
+    <input id="signup-email" type="email" placeholder="you@example.com" required autocomplete="email" />
+    <label for="signup-password">Password</label>
+    <input id="signup-password" type="password" placeholder="Create a password" required autocomplete="new-password" />
+    <button type="submit">Sign Up</button>
+  </form>
+</div>
+
+<script>
+  // Tab switching
+  const loginTab = document.getElementById('login-tab');
+  const signupTab = document.getElementById('signup-tab');
+  const loginForm = document.getElementById('login-form');
+  const signupForm = document.getElementById('signup-form');
+
+  function activateTab(tabToActivate) {
+    if(tabToActivate === 'login') {
+      loginTab.classList.add('active');
+      loginTab.setAttribute('aria-selected', 'true');
+      loginTab.setAttribute('tabindex', '0');
+
+      signupTab.classList.remove('active');
+      signupTab.setAttribute('aria-selected', 'false');
+      signupTab.setAttribute('tabindex', '-1');
+
+      loginForm.classList.add('active');
+      signupForm.classList.remove('active');
+    } else {
+      signupTab.classList.add('active');
+      signupTab.setAttribute('aria-selected', 'true');
+      signupTab.setAttribute('tabindex', '0');
+
+      loginTab.classList.remove('active');
+      loginTab.setAttribute('aria-selected', 'false');
+      loginTab.setAttribute('tabindex', '-1');
+
+      signupForm.classList.add('active');
+      loginForm.classList.remove('active');
+    }
+  }
+
+  loginTab.addEventListener('click', () => activateTab('login'));
+  signupTab.addEventListener('click', () => activateTab('signup'));
+
+  loginTab.addEventListener('keydown', e => {
+    if(e.key === 'ArrowRight' || e.key === 'ArrowLeft') {
+      activateTab('signup');
+      signupTab.focus();
+    }
+  });
+  signupTab.addEventListener('keydown', e => {
+    if(e.key === 'ArrowLeft' || e.key === 'ArrowRight') {
+      activateTab('login');
+      loginTab.focus();
+    }
+  });
+
+
+  // Under Construction dismiss
+  const underConstruction = document.getElementById('under-construction');
+  const dismissBtn = document.getElementById('dismiss-btn');
+
+  dismissBtn.addEventListener('click', () => {
+    underConstruction.style.display = 'none';
+  });
+
+  // Optional: prevent form submissions (no backend)
+  loginForm.addEventListener('submit', e => {
+    e.preventDefault();
+    alert('Login functionality coming soon!');
+  });
+  signupForm.addEventListener('submit', e => {
+    e.preventDefault();
+    alert('Signup functionality coming soon!');
+  });
+</script>
+
+</body>
+</html>
