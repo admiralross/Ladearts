@@ -436,11 +436,83 @@ footer {
     background-color: #222;
 }
 
-© 2024 Minimal
+© 2026 Minimal
 copyright {
     font-size: 0.9rem;
     color: #444;
 }
+  .how-it-works {
+    text-align: center;
+    margin: 100px auto 120px;
+  }
+
+  .section-subtitle {
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    font-weight: 600;
+    color: #777;
+    letter-spacing: 2px;
+    margin-bottom: 10px;
+  }
+
+  .section-title {
+    font-size: 2.3rem;
+    font-weight: 700;
+    margin-bottom: 60px;
+    color: #000;
+  }
+
+  .steps {
+    display: flex;
+    justify-content: center;
+    gap: 80px;
+    flex-wrap: wrap;
+  }
+
+  .step {
+    max-width: 280px;
+  }
+
+  .number {
+    font-weight: 900;
+    font-size: 4rem;
+    color: #000;
+    margin-bottom: 12px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  }
+
+  .icon {
+    font-size: 3.5rem;
+    margin-bottom: 20px;
+  }
+
+  .step h3 {
+    font-weight: 700;
+    font-size: 1.8rem;
+    margin-bottom: 12px;
+  }
+
+  .step p {
+    font-size: 1.05rem;
+    font-weight: 400;
+    color: #444;
+    line-height: 1.5;
+  }
+
+  /* Responsive */
+  @media (max-width: 900px) {
+    .steps {
+      gap: 40px;
+    }
+  }
+
+  @media (max-width: 600px) {
+    .steps {
+      flex-direction: column;
+      align-items: center;
+      gap: 50px;
+    }
+  }
 
 /* Responsive */
 @media (max-width: 900px) {
@@ -517,6 +589,30 @@ copyright {
             <img src="IMG_0492.jpeg" alt="Woman" />
         </div>
     </section>
+     <section class="how-it-works container" aria-label="How it works">
+  <p class="section-subtitle">What to do</p>
+  <h2 class="section-title">How it works</h2>
+  <div class="steps">
+    <div class="step">
+      <div class="number">1</div>
+      <div class="icon" aria-hidden="true">📱</div>
+      <h3>Scan</h3>
+      <p>Use your phone camera to scan the frame.</p>
+    </div>
+    <div class="step">
+      <div class="number">2</div>
+      <div class="icon" aria-hidden="true">🔍</div>
+      <h3>Discover</h3>
+      <p>View the story, inspiration, and process video.</p>
+    </div>
+    <div class="step">
+      <div class="number">3</div>
+      <div class="icon" aria-hidden="true">🎨</div>
+      <h3>Experience</h3>
+      <p>Unlock the digital layer behind the artwork.</p>
+    </div>
+  </div>
+</section>
 
     <section class="made-for-you container">
         <p class="subtitle">Who we serve</p>
